@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
-import { Model } from "mongoose";
-import { USER_ROLE } from "./user.constant";
+import { Model } from 'mongoose';
+import { USER_ROLE } from './user.constant';
 
 export interface TUser extends Document {
   [x: string]: any;
   name: string;
   email: string;
   password: string;
-  role: "user" | "admin";
+  role: 'user' | 'admin';
   phone?: string;
   address?: string;
   city?: string;
@@ -25,7 +25,7 @@ export interface UserModel extends Model<TUser> {
   //instance methods for checking if passwords are matched
   isPasswordMatched(
     plainTextPassword: string,
-    hashedPassword: string
+    hashedPassword: string,
   ): Promise<boolean>;
 }
 

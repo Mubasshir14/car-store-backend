@@ -82,7 +82,6 @@ const calculateRevenue: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-
 const updateOrder: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
   const { orderStatus } = req.body;
@@ -95,7 +94,6 @@ const updateOrder: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-
 export const OrderControllers = {
   createOrder,
   verifyPayment,
@@ -104,5 +102,5 @@ export const OrderControllers = {
   getSingleOrder,
   calculateRevenue,
   getAdminSingleOrder,
-  updateOrder
+  updateOrder,
 };

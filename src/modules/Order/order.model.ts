@@ -1,18 +1,18 @@
-import { model, Schema } from "mongoose";
-import { TOrder } from "./order.interface";
+import { model, Schema } from 'mongoose';
+import { TOrder } from './order.interface';
 
 const OrderSchema = new Schema<TOrder>(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
       required: true,
     },
     cars: [
       {
         car: {
           type: Schema.Types.ObjectId,
-          ref: "Car",
+          ref: 'Car',
           required: true,
         },
         quantity: {
@@ -73,7 +73,6 @@ const OrderSchema = new Schema<TOrder>(
         },
         city: {
           type: String,
-         
         },
         totalPrice: {
           type: Number,
@@ -90,13 +89,13 @@ const OrderSchema = new Schema<TOrder>(
     },
     orderStatus: {
       type: String,
-      enum: ["Pending", "Paid", "Shipped", "Completed", "Cancelled"],
-      default: "Pending",
+      enum: ['Pending', 'Paid', 'Shipped', 'Completed', 'Cancelled'],
+      default: 'Pending',
     },
     status: {
       type: String,
-      enum: ["Pending", "Paid", "Shipped", "Completed", "Cancelled"],
-      default: "Pending",
+      enum: ['Pending', 'Paid', 'Shipped', 'Completed', 'Cancelled'],
+      default: 'Pending',
     },
     transaction: {
       id: String,
@@ -110,9 +109,9 @@ const OrderSchema = new Schema<TOrder>(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-const Order = model<TOrder>("Order", OrderSchema);
+const Order = model<TOrder>('Order', OrderSchema);
 
 export default Order;

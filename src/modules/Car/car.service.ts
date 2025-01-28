@@ -6,12 +6,10 @@ import { Car } from './car.model';
 import QueryBuilder from '../../app/builder/QueryBuilder';
 import { searchText } from './car.constant';
 
-
 const createCarIntoDB = async (payload: TCar) => {
   const result = await Car.create(payload);
   return result;
 };
-
 
 const updateSingleCar = async (payload: TCar, id: string) => {
   const car = await Car.isCarExists(id);

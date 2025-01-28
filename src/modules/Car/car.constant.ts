@@ -1,1 +1,1 @@
-export const searchText = ["brand","carName", "model","category"];
+export const searchText = ['brand', 'carName', 'model', 'category'];

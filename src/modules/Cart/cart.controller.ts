@@ -27,8 +27,8 @@ const getOrderForSpecificUser: RequestHandler = catchAsync(async (req, res) => {
 });
 
 const removeCartItem: RequestHandler = catchAsync(async (req, res) => {
-  const { id } = req.params;  
-  const email = req?.user?.email;  
+  const { id } = req.params;
+  const email = req?.user?.email;
   const result = await CartServices.removeCartItem(id, email);
 
   sendResponse(res, {
@@ -40,8 +40,7 @@ const removeCartItem: RequestHandler = catchAsync(async (req, res) => {
 });
 
 const removeAllCartItem: RequestHandler = catchAsync(async (req, res) => {
-
-  const email = req?.user?.email;  
+  const email = req?.user?.email;
   const result = await CartServices.removeAllCartItemFromD(email);
 
   sendResponse(res, {
@@ -66,5 +65,5 @@ export const CartController = {
   addToCart,
   getOrderForSpecificUser,
   removeCartItem,
-  removeAllCartItem
+  removeAllCartItem,
 };

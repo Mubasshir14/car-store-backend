@@ -27,7 +27,7 @@ const deleteSingleCar: RequestHandler = catchAsync(async (req, res) => {
 const updateCar: RequestHandler = catchAsync(async (req, res) => {
   const id = req?.params?.id;
   const result = await CarServices.updateSingleCar(req.body, id);
-  console.log("Car update",result);
+  console.log('Car update', result);
   sendResponse(res, {
     success: true,
     message: 'Car updated successfully',
@@ -38,7 +38,7 @@ const updateCar: RequestHandler = catchAsync(async (req, res) => {
 
 const getCar: RequestHandler = catchAsync(async (req, res) => {
   const result = await CarServices.getCarFromDB(req?.query);
-  // console.log('Query Parameters:', req.query); 
+  // console.log('Query Parameters:', req.query);
   sendResponse(res, {
     success: true,
     message: 'Car fetched successfully',

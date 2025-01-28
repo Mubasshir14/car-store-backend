@@ -125,7 +125,6 @@ const refreshToken = async (token: string) => {
   }
 };
 
-
 const forgetPassword = async (email: string) => {
   const user = await User.isUserExists(email);
   if (!user) {

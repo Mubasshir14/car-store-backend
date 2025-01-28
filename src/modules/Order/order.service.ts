@@ -210,10 +210,9 @@ const calculateTotalRevenue = async () => {
   return totalRevenue;
 };
 
-
 const updateOrderStatus = async (
   id: string,
-  orderStatus: string
+  orderStatus: string,
 ): Promise<TOrder | null> => {
   const allowedStatuses = ['Shipped', 'Cancelled'];
   if (!allowedStatuses.includes(orderStatus)) {
@@ -226,7 +225,7 @@ const updateOrderStatus = async (
   if (order.orderStatus === 'Shipped' || order.orderStatus === 'Cancelled') {
     throw new AppError(
       httpStatus.BAD_REQUEST,
-      'Cannot modify order status once shipped or cancelled'
+      'Cannot modify order status once shipped or cancelled',
     );
   }
   const result = await Order.findByIdAndUpdate(
@@ -235,12 +234,11 @@ const updateOrderStatus = async (
     {
       new: true,
       runValidators: true,
-    }
+    },
   );
 
   return result;
 };
-
 
 export const OrderService = {
   createOrderIntoDB,
@@ -250,5 +248,5 @@ export const OrderService = {
   getSingleOrderFromDb,
   calculateTotalRevenue,
   getAdminSingleOrderFromDb,
-  updateOrderStatus
+  updateOrderStatus,
 };

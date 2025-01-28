@@ -7,17 +7,16 @@ export const sendEmail = async (to: string, html: string) => {
     port: 587,
     secure: config.NODE_ENV === 'production',
     auth: {
-
       user: 'smmubasshiralkasshaf15@gmail.com',
       pass: 'ceuv qvlu wweh cdmf',
     },
   });
 
   await transporter.sendMail({
-    from: 'smmubasshiralkasshaf15@gmail.com', 
+    from: 'smmubasshiralkasshaf15@gmail.com',
     to,
-    subject: 'Reset your password within ten mins!', 
+    subject: 'Reset your password within ten mins!',
     text: '',
-    html, 
+    html,
   });
 };

@@ -85,10 +85,9 @@ const removeAllCartItemFromD = async (email: string) => {
   return { message: 'All cart items deleted successfully' };
 };
 
-
 export const CartServices = {
   addToCart,
   getCartFromDBFOrSpecificUser,
-  removeCartItem,  
-  removeAllCartItemFromD
+  removeCartItem,
+  removeAllCartItemFromD,
 };

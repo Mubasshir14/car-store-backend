@@ -7,5 +7,5 @@ export type TReview = {
   name: string;
   model: string;
   image: string;
-  rating: number
+  rating: number;
 };

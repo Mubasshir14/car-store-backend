@@ -1,4 +1,3 @@
-
 import { Multer } from 'multer';
 
 declare global {

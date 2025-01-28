@@ -52,10 +52,6 @@ router.get(
   AuthUserController.getMe,
 );
 
-router.get(
-  '/user',
-  auth(USER_ROLE.admin),
-  AuthUserController.getUser,
-);
+router.get('/user', auth(USER_ROLE.admin), AuthUserController.getUser);
 
 export const AuthRoutes = router;

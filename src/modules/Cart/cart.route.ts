@@ -6,22 +6,10 @@ const router = express.Router();
 
 router.post('/', auth(USER_ROLE.user), CartController.addToCart);
 
-router.get(
-  '/',
-  auth(USER_ROLE.user),
-  CartController.getOrderForSpecificUser,
-);
+router.get('/', auth(USER_ROLE.user), CartController.getOrderForSpecificUser);
 
-router.delete(
-  '/:id',
-  auth(USER_ROLE.user),
-  CartController.removeCartItem,
-);
+router.delete('/:id', auth(USER_ROLE.user), CartController.removeCartItem);
 
-router.delete(
-  '/',
-  auth(USER_ROLE.user),
-  CartController.removeAllCartItem,
-);
+router.delete('/', auth(USER_ROLE.user), CartController.removeAllCartItem);
 
 export const CartRoutes = router;

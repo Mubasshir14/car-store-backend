@@ -12,6 +12,7 @@ const createReview: RequestHandler = catchAsync(async (req, res) => {
     data: result,
   });
 });
+
 const getReview: RequestHandler = catchAsync(async (req, res) => {
   const result = await ReviewService.getReviewIntoDB();
   sendResponse(res, {
@@ -21,7 +22,19 @@ const getReview: RequestHandler = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getProductReview: RequestHandler = catchAsync(async (req, res) => {
+  const {id} = req.params
+  const result = await ReviewService.getProductReviewIntoDB(id);
+  sendResponse(res, {
+    success: true,
+    message: 'Review fetched successfully',
+    statusCode: 200,
+    data: result,
+  });
+});
+
 export const ReviewController = {
   createReview,
   getReview,
+  getProductReview
 };
