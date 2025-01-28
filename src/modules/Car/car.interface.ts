@@ -13,6 +13,7 @@ export type TCar = {
   quantity: number;
   milage: string;
   fuelType: string;
+  featured: boolean;
   inStock: boolean;
 };
 

@@ -28,7 +28,7 @@ export const createCarValidationSchema = z.object({
         message: `${issue.message}. Choose from 'Sedan', 'SUV', 'Truck', 'Coupe', 'Convertible'`,
       }),
     }),
-    mileage: z.string(),
+    milage: z.string(),
     fuelType: z.string(),
     description: z
       .string()
@@ -77,7 +77,7 @@ export const updateCarValidationSchema = z.object({
         }),
       })
       .optional(),
-    mileage: z.string().optional(),
+    milage: z.string().optional(),
     fuelType: z.string().optional(),
     description: z
       .string()

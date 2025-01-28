@@ -67,6 +67,9 @@ const carSchema = new Schema<TCar>(
     fuelType: {
       type: String,
     },
+    featured: {
+      type: Boolean,
+    },
     inStock: {
       type: Boolean,
       default: true,
@@ -92,6 +95,7 @@ carSchema.set('toJSON', {
       fuelType: obj.fuelType,
       description: obj.description,
       quantity: obj.quantity,
+      featured: obj.featured,
       inStock: obj.inStock,
     };
   },
