@@ -27,7 +27,6 @@ const deleteSingleCar: RequestHandler = catchAsync(async (req, res) => {
 const updateCar: RequestHandler = catchAsync(async (req, res) => {
   const id = req?.params?.id;
   const result = await CarServices.updateSingleCar(req.body, id);
-  console.log('Car update', result);
   sendResponse(res, {
     success: true,
     message: 'Car updated successfully',

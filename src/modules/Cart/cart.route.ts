@@ -12,4 +12,6 @@ router.delete('/:id', auth(USER_ROLE.user), CartController.removeCartItem);
 
 router.delete('/', auth(USER_ROLE.user), CartController.removeAllCartItem);
 
+router.patch('/:id', auth(USER_ROLE.user), CartController.updateCart);
+
 export const CartRoutes = router;

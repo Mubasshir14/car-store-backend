@@ -47,14 +47,14 @@ export const updateCarValidationSchema = z.object({
   body: z.object({
     brand: z
       .string()
-      .min(4, { message: 'Brand Name must contain at least 4 characters' })
+      .min(1, { message: 'Brand Name must contain at least 1 characters' })
       .max(30, { message: 'Brand Name cannot exceed 30 characters' })
       .nonempty({ message: 'Brand Name is required' })
       .optional(),
     image: z.string().optional(),
     model: z
       .string()
-      .min(4, { message: 'Model Name must contain at least 4 characters' })
+      .min(1, { message: 'Model Name must contain at least 1 characters' })
       .max(30, { message: 'Model Name cannot exceed 30 characters' })
       .nonempty({ message: 'Model Name is required' })
       .optional(),

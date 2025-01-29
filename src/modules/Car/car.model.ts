@@ -6,13 +6,13 @@ const carSchema = new Schema<TCar>(
     brand: {
       type: String,
       required: [true, 'Brand Name is required'],
-      minlength: [4, 'Brand Name must contain at least 4 characters'],
+      minlength: [1, 'Brand Name must contain at least 1 characters'],
       maxlength: [30, 'Brand Name cannot contain more than 30 characters'],
     },
     carName: {
       type: String,
       required: [true, 'Car Name is required'],
-      minlength: [4, 'Car Name must contain at least 4 characters'],
+      minlength: [1, 'Car Name must contain at least 1 characters'],
       maxlength: [30, 'Car Name cannot contain more than 30 characters'],
     },
     image: {
@@ -21,7 +21,7 @@ const carSchema = new Schema<TCar>(
     model: {
       type: String,
       required: [true, 'Model Name is required'],
-      minlength: [4, 'Model Name must contain at least 4 characters'],
+      minlength: [1, 'Model Name must contain at least 1 characters'],
       maxlength: [30, 'Model Name cannot contain more than 30 characters'],
     },
     year: {

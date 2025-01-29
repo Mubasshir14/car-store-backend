@@ -1,3 +1,5 @@
+import httpStatus from 'http-status';
+import AppError from '../../app/errors/AppError';
 import { Cart } from './cart.model';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -85,9 +87,22 @@ const removeAllCartItemFromD = async (email: string) => {
   return { message: 'All cart items deleted successfully' };
 };
 
+const updateSingleCart = async (id: string, payload: any) => {
+  const car = await Cart.findById(id);
+  if (!car) {
+    throw new AppError(httpStatus.NOT_FOUND, 'Cart not found!');
+  }
+  const result = await Cart.findByIdAndUpdate(id, payload, {
+    new: true,
+  });
+  console.log(result);
+  return result;
+};
+
 export const CartServices = {
   addToCart,
   getCartFromDBFOrSpecificUser,
   removeCartItem,
   removeAllCartItemFromD,
+  updateSingleCart
 };

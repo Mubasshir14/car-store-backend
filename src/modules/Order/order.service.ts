@@ -197,16 +197,11 @@ const getAdminSingleOrderFromDb = async (id: string) => {
 };
 
 const calculateTotalRevenue = async () => {
-  // First, find all orders
   const orders = await Order.find();
-
   if (!orders.length) {
     throw new Error('No Orders Exist');
   }
-
-  // Sum the totalPrice of all orders
   const totalRevenue = orders.reduce((sum, order) => sum + order.totalPrice, 0);
-
   return totalRevenue;
 };
 

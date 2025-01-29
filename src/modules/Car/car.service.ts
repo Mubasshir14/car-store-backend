@@ -19,7 +19,6 @@ const updateSingleCar = async (payload: TCar, id: string) => {
   const result = await Car.findByIdAndUpdate(id, payload, {
     new: true,
   });
-  console.log('object', result);
   return result;
 };
 

@@ -51,19 +51,22 @@ const removeAllCartItem: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-// const clearCart: RequestHandler = catchAsync(async (req, res) => {
-//   const { userId } = req.params;
-//   await CartServices.clearCart(userId);
-//   sendResponse(res, {
-//     success: true,
-//     message: 'Cart cleared successfully!',
-//     statusCode: 200,
-//   });
-// });
+const updateCart: RequestHandler = catchAsync(async (req, res) => {
+  const id = req?.params?.id;
+  const result = await CartServices.updateSingleCart(id, req.body);
+  console.log('Cart update', result);
+  sendResponse(res, {
+    success: true,
+    message: 'Cart updated successfully',
+    statusCode: 200,
+    data: result,
+  });
+});
 
 export const CartController = {
   addToCart,
   getOrderForSpecificUser,
   removeCartItem,
   removeAllCartItem,
+  updateCart
 };
